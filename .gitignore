@@ -8,7 +8,7 @@ Thumbs.db
 
 #Ignore dependencies
 node_modules/
-./venv/
+.venv/
 /venv/
 
 #Ignore build outputs and log files
