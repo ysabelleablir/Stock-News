@@ -1,0 +1,8 @@
+To put current packages in the requirements.txt: pip freeze > requirements.txt
+To install all packages: pip install -r requirements.txt
+
+SETTING UP VIRTUAL ENVIROMENT
+1. cd project/path/directory
+2. python3 -m venv .venv
+3. source .venv/bin/activate
+
