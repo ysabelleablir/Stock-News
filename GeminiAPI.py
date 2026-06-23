@@ -6,8 +6,8 @@ from google.genai import types
 load_dotenv()
 
 gemini_key = os.getenv('Gemini_Key')
-ticker = ___
-articles = ___
+#ticker = ___
+#articles = ___
 
 client = genai.Client(
   api_key=gemini_key,
