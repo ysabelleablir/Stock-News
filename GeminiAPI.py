@@ -2,12 +2,15 @@ import os
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
+#from news import article_urls
 
 load_dotenv()
 
 gemini_key = os.getenv('Gemini_Key')
-#ticker = ___
-#articles = ___
+ticker = input('ticker symbol ')
+articles = ['https://financefeeds.com/bnb-faces-a-make-or-break-moment-before-june-ends/', 
+'https://www.pb.pl/technologiczne-spolki-tanieja-w-usa-ale-wiekszosc-pozostalych-drozeje-1263324',
+'https://www.investorideas.com/news/2026/renewable-energy/06231-tesla-natpower-battery-storage-deal.asp']
 
 client = genai.Client(
   api_key=gemini_key,
@@ -32,10 +35,11 @@ Based on the above articles given to you Predict:
 weather the stock will go up or down tomorrow.
 """
 
-interaction = client.interactions.create(
-    model="gemini-3.5-flash",
-    system_instruction=(
-    #input=prompt,
+
+
+response = client.models.generate_content(
+    model="gemini-2.5-flash",
+    contents=prompt
 )
 
-print(interaction.output)
+print(response.text)
