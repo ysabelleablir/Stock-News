@@ -6,3 +6,6 @@ SETTING UP VIRTUAL ENVIROMENT
 2. python3 -m venv .venv
 3. source .venv/bin/activate
 
+Gen AI API
+1. pip3 install google-genai
+
