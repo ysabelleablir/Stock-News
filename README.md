@@ -1,2 +1,6 @@
-# Stock + News Decisions
-A prediction project that uses the marketstack API, which helps access global stock market data, and the MarketAux API, which obtains finance and market news.
+## Stock + News Decisions
+A prediction project that uses the Alpaca API, which helps access global stock market data, and the MarketAux API, which obtains finance and market news.
+
+## Stock market sentiment
+We compare a users given stock to current world events and provide a sentiment analysis for that given stock
+
