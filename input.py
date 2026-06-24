@@ -1,4 +1,5 @@
 from news import Search
+from GeminiAPI import Gemini
 
 choice = '0'
 while choice != 'q':
@@ -17,4 +18,7 @@ while choice != 'q':
             print(f"Invalid input of \"{choice}\". Please try again.")
             continue
     
+    
     # TODO: print response from Gemini
+    response = Gemini.ask_gemini(ticker, articles)
+    print (response)
