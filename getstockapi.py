@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import json
 from dotenv import load_dotenv
+import sqlalchemy as db
 
 load_dotenv()
 
@@ -47,6 +48,7 @@ n: Number of trades (transactions) in that specific bar period.
 t: Timestamp (in ISO 8601 format, with Z indicating UTC).
 """
 
+#Inputting values into dictionary for pandas
 keys = ["symbol","close","high","low","open","time","volume","volume-weighted"]
 ochlv = {key: [] for key in keys}
 
@@ -68,8 +70,12 @@ for ticker in ticker_symbols:
     ochlv['volume'].append(bars['v'])
     ochlv['volume-weighted'].append(bars['vw'])
 
+
 df = pd.DataFrame(ochlv)
-print(df)
+
+
+
+
 
 
 
