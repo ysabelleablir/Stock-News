@@ -9,7 +9,7 @@ while choice != 'q':
         case '1':
             ticker = input("Enter the stock ticker: ").upper().strip()
             # TODO: obtain information from database
-            urls = Search.obtain_urls("ticker", ticker)
+            titles, urls = Search.obtain_articles("ticker", ticker)
         case 'q':
             print("Exiting program.")
             exit()

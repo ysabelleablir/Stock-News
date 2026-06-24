@@ -14,7 +14,7 @@ SEARCH_PREFS = {
 
 class Search:
     @staticmethod
-    def obtain_urls(preference, value):
+    def obtain_articles(preference, value):
         parameters = {
             "api_token": NEWS_KEY,
             "published_after": date.today() - timedelta(days=7)
@@ -24,6 +24,7 @@ class Search:
         # Parsing the response
         response = requests.get(BASE_URL + 'news/all', params=parameters)
         articles = response.json()["data"]
+        article_titles = [article["title"] for article in articles]
         article_urls = [article["url"] for article in articles]
 
-        return article_urls
+        return (article_titles, article_urls)
