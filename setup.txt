@@ -9,3 +9,9 @@ SETTING UP VIRTUAL ENVIROMENT
 Gen AI API
 1. pip3 install google-genai
 
+
+Future Things:
+1. User can provide a certain industry and we can provide them a suggested Stock
+2. We can try to get more stock data as we are limited to 100 right now
+3.
+
