@@ -5,6 +5,7 @@ import json
 from dotenv import load_dotenv
 import sqlalchemy as db
 
+
 load_dotenv()
 
 API_KEY = os.getenv("ALPACA_API_KEY")
@@ -73,11 +74,11 @@ for ticker in ticker_symbols:
 
 df = pd.DataFrame(ochlv)
 
-print(df)
-
 engine = db.create_engine('sqlite:///data_base_name.db')
 
 df.to_sql('tickers',con=engine,if_exists='replace',index=False)
+
+print(df)
 
 
 
