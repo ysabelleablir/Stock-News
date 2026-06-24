@@ -16,7 +16,7 @@ url_active = "https://data.alpaca.markets/v1beta1/screener/stocks/most-actives"
 
 params_active = {
     "by": "volume",
-    "top": 50
+    "top": 100
 }
 
 response_top = requests.get(url_active, params = params_active, auth = (API_KEY, SECRET))
@@ -72,6 +72,12 @@ for ticker in ticker_symbols:
 
 
 df = pd.DataFrame(ochlv)
+
+print(df)
+
+engine = db.create_engine('sqlite:///data_base_name.db')
+
+df.to_sql('tickers',con=engine,if_exists='replace',index=False)
 
 
 

@@ -1,5 +1,6 @@
 from news import Search
 from GeminiAPI import Gemini
+from query import user_req
 
 choice = '0'
 while choice != 'q':
@@ -20,5 +21,6 @@ while choice != 'q':
     
     
     # TODO: print response from Gemini
-    response = Gemini.ask_gemini(ticker, articles)
+    ticker_data = user_req(ticker)
+    response = Gemini.ask_gemini(ticker_data, urls)
     print (response)
