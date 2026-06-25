@@ -23,4 +23,4 @@ while choice != 'q':
     # TODO: print response from Gemini
     ticker_data = user_req(ticker)
     response = Gemini.ask_gemini(ticker_data, urls)
-    print (response)
+    print(response)

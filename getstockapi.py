@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import sqlalchemy as db
 
 
+print("Getting Stock Data...")
 load_dotenv()
 
 API_KEY = os.getenv("ALPACA_API_KEY")
@@ -79,6 +80,7 @@ engine = db.create_engine('sqlite:///data_base_name.db')
 df.to_sql('tickers',con=engine,if_exists='replace',index=False)
 
 print(df)
+print("Got Stock data!")
 
 
 
