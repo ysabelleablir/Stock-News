@@ -14,7 +14,8 @@ choice = '0'
 while choice != 'q':
     print(banner)
     choice = input("Please enter search preference by number or 'q' to quit.\n" +
-        "(1) Search by ticker\n" +
+        "(1) Get semantic stock analysis by inputting ticker symbole\n" +
+        "(2) Input ticker symbol to get OHLCV for that ticker\n"
         "Enter choice: ").strip()
     titles = []
     urls = []
@@ -37,6 +38,12 @@ while choice != 'q':
             print(statement)
 
             response = Gemini.ask_gemini(ticker_data, statement)
+        case '2':
+            ticker = input("Enter the stock ticker: ").upper().strip()
+            print(f"Getting OHLCV market data on {ticker}...")
+            ticker_data = user_req(ticker)
+            print(ticker_data)
+            response = "Ticker data displayed above."
         case 'q':
             print("Exiting program.")
             exit()
