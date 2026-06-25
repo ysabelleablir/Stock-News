@@ -12,7 +12,8 @@ from getstockapi import(
     save_to_database,
     main
 )
-#To run :python -m unittest Stock_Unit_test.TestFetchMostActiveStocks -v
+
+#To run : python -m unittest Stock_Unit_test.TestFetchMostActiveStocks -v
 
 class TestFetchMostActiveStocks(unittest.TestCase):
     @patch('getstockapi.requests.get')
