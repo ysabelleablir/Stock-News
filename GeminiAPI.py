@@ -14,6 +14,8 @@ client = genai.Client(
 class Gemini:
   @staticmethod
   def ask_gemini(ticker, articles):
+    print("Getting Gemini Response...")
+
     if len(articles) < 3:
       raise ValueError("Expected at least 3 articles")
 
@@ -42,5 +44,5 @@ class Gemini:
         model="gemini-2.5-flash",
         contents=prompt
     )
-
+    print("Got Gemini Response!")
     return (response.text)

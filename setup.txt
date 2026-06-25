@@ -13,5 +13,10 @@ Gen AI API
 Future Things:
 1. User can provide a certain industry and we can provide them a suggested Stock
 2. We can try to get more stock data as we are limited to 100 right now
-3.
+3. We can use multiple AI agents to get multiple opinions on a single stock
+4. Show 1 day prediction, 1 week prediction, and 1 month prediction. 
+5. We can also gets sentiment analysis for the stock's sector along with the stock itself
+6. We can show basic information on stock too like user wants OHLCV of a stock
+
+
 

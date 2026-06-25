@@ -30,5 +30,9 @@ while choice != 'q':
             print(f"Invalid input of \"{choice}\". Please try again.")
             continue
     
+    
+    # TODO: print response from Gemini
+    ticker_data = user_req(ticker)
+    response = Gemini.ask_gemini(ticker_data, urls)
     print("Prediction:")
     print(response)
