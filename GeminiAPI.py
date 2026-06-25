@@ -16,26 +16,16 @@ class Gemini:
   def ask_gemini(ticker, articles):
     print("Getting Gemini Response...")
 
-    if len(articles) < 3:
-      raise ValueError("Expected at least 3 articles")
-
     prompt = f"""
     Stock ticker: {ticker}
 
     News articles:
+    {articles}
 
-    Article 1:
-    {articles[0]}
-
-    Article 2:
-    {articles[1]}
-
-    Article 3:
-    {articles[2]}
-
-    you are a wall street financial analyst trying to predict a stock's response.
-    Based on the above articles given to you Predict:
-    weather the stock will go up or down tomorrow.
+    you are a wall street financial analyst trying to predict a stock's response
+    based on the potential articles and the stock data provided to you. If there
+    are no articles, just go based on the stock data; otherwise, explain analysis
+    in relation to the stock. Predict: whether the stock will go up or down tomorrow.
     """
 
 

@@ -18,11 +18,16 @@ while choice != 'q':
 
             print("Obtaining articles...")
             titles, urls = Search.obtain_articles("ticker", ticker)
-            for num, title in enumerate(titles, start=1):
-                print(f"{num}. {title} - {urls[num - 1]}")
+            statement = []
+            if len(urls) != 0:
+                for num, title in enumerate(titles, start=1):
+                    statement.append(f"{num}. {title} - {urls[num - 1]}\n")
+                statement = "\n".join(statement)
+            else:
+                statement = "None found."
+            print(statement)
 
-            print("Generating response...")
-            response = Gemini.ask_gemini(ticker_data, urls)
+            response = Gemini.ask_gemini(ticker_data, statement)
         case 'q':
             print("Exiting program.")
             exit()
@@ -30,9 +35,5 @@ while choice != 'q':
             print(f"Invalid input of \"{choice}\". Please try again.")
             continue
     
-    
-    # TODO: print response from Gemini
-    ticker_data = user_req(ticker)
-    response = Gemini.ask_gemini(ticker_data, urls)
     print("Prediction:")
     print(response)
