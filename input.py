@@ -14,7 +14,7 @@ choice = '0'
 while choice != 'q':
     print(banner)
     choice = input("Please enter search preference by number or 'q' to quit.\n" +
-        "(1) Get semantic stock analysis by inputting ticker symbole\n" +
+        "(1) Get semantic stock analysis by inputting ticker symbol\n" +
         "(2) Input ticker symbol to get OHLCV for that ticker\n"
         "Enter choice: ").strip()
     titles = []
